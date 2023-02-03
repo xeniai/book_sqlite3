@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Xenia</title>
+</head>
+
+<body>
+    <div class="container">
+      <br>
+      <h1>My Library</h1>
+        {% if books == []: %}
+        <p>Library is empty.</p>
+        {% endif %}
+
+      <table border=0>
+        <thead>
+          <td><b>Title</b></td>
+          <td><b>Author</b></td>
+          <td><b>Rating</b></td>
+        </thead>
+      
+      {% for row in books: %}
+        <tr>
+          <td>{{row[1]}}</td>
+          <td>{{row[2]}}</td>
+          <td>{{row[3]}}</td>
+        </tr>
+      {% endfor %}
+    </table>
+      <br>
+      <a href="{{url_for('add')}}" class="text-decoration-none">Add A Book</a>
+    </div> 
+</body>
+</html>
